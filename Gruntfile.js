@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'style.css': 'scss/style.scss' // Output compiled CSS to style.css
+                    'custom-styles.css': 'scss/main.scss' // Output compiled CSS to style.css
                 }
             }
         }
