@@ -1,24 +1,50 @@
 @import "../base.scss";
 
 .featured-content-block{
-    .block-wrapper{
-        max-width: 75%;
+    max-height: 100%;
+    .block-wrapper{        
         margin: auto;
-        display: flex;
-        justify-content: center;
+        display: flex;        
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;        
+        max-width: 1080px;
+        @media screen and (min-width: $break-md){
+            flex-direction: row;
+            justify-content: center;            
+        }
         .block-content{
-            width: 50%;
-            max-width: 463px;
+            width: 100%;
+            max-width: 463px;       
+            margin-bottom: 2em;     
+            @media screen and (min-width: $break-md){
+                width: 50%;
+                margin-right: 1.5em;
+                margin-bottom: unset;
+            }
             .block-title{
-                font-size: 40px;
-                line-height: 47px;
+                font-size: 33px;
+                line-height: 39px;
+                font-weight: 400;
+                max-width: 370px;
+                margin-top: 0;
                 font-family: 'Roboto Condensed', sans-serif;            
+                @media screen and (min-width: $break-lg){
+                    font-size: 40px;
+                    line-height: 47px;
+                }
             }
             .block-description{
                 // display: flex;
                 p{
-                    font-size: 16px;
-                    line-height: 19px;
+                    font-size: 18px;
+                    line-height: 21px;
+                    @media screen and (min-width: $break-lg){
+                        font-size: 16px;
+                        line-height: 19px;
+                    }
                 }
                 .description-summary{
                     .read-more-btn{
@@ -27,28 +53,73 @@
                         cursor: pointer;
                         padding: 0;
                         margin: 0;
-                        font-weight: 700;
-                        color: #6455FF;
+                        font-weight: 700;                        
                         padding-left: 15px;
+                        text-decoration: underline;
+                        @media screen and (max-width: $break-md) {
+                            display: none;
+                        }
                     }
                 }                
-                .description-body{
-                    color: #4A4A4A;
+                .description-body{                    
                     @media screen and (min-width: $break-md) {
-                        display: none;
-                    }
-                }                
+                        display: none;                        
+                    }                    
+                }                 
+            }
+            .block-cta{
+                font-family: 'Roboto Condensed', sans-serif;       
+                text-transform: uppercase;
+                text-decoration: none;
+                font-size: 18px;
+                line-height: 21px;
+                padding: 8px 20px;
+                font-weight: 700;
+                border-radius: 3px;
+                display: block;
+                width: fit-content;
+                transition: transform 0.3s ease-in-out;
+                @media screen and (min-width: $break-lg) {
+                    font-size: 16px;
+                    line-height: 19px;
+                }                    
+                &:hover{
+                    transform: scale(1.1);
+                }
             }
         }
         .block-image{
-            width: 50%;
-            display: flex;
+            width: 100%;
+            display: flex;            
             justify-content: center;
+            @media screen and (min-width: $break-md){
+                width: 50%;
+                justify-content: flex-end;
+            }
             img{
                 width: 100%;
                 height: 100%;
                 max-width: 463px;
             }
+        }
+    }
+}
+.fcb-inverse .block-wrapper{
+    .block-content{    
+    margin-right: unset;
+    margin-left: 1.5em;
+    @media screen and (min-width: $break-md){
+        width: 50%;
+        justify-content: flex-end;
+        order: 2;
+    }
+    }    
+    .block-image{        
+        order: 2;
+        justify-content: center;
+        @media screen and (min-width: $break-md){            
+            order: unset;
+            justify-content: flex-start;
         }
     }
 }
